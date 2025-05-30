@@ -1,0 +1,208 @@
+{
+  "areas": [
+    {
+      "name": "Motivazione sul lavoro",
+      "scales": [
+        {
+          "name": "Motivazione al risultato",
+          "items": [
+            {"text": "Mi impegno al massimo per raggiungere gli obiettivi che mi vengono assegnati.", "reverse": false},
+            {"text": "Trovo soddisfazione solo quando supero le aspettative del mio ruolo.", "reverse": false},
+            {"text": "Cerco sempre di migliorarmi anche quando ottengo buoni risultati.", "reverse": false},
+            {"text": "Mi pongo regolarmente obiettivi sfidanti.", "reverse": false},
+            {"text": "Sono disposto/a a fare sacrifici personali per raggiungere un risultato importante.", "reverse": false},
+            {"text": "Rinuncio facilmente se un compito risulta troppo difficile.", "reverse": true},
+            {"text": "Evito situazioni in cui devo confrontarmi con obiettivi ambiziosi.", "reverse": true}
+          ]
+        },
+        {
+          "name": "Motivazione al potere",
+          "items": [
+            {"text": "Sento la necessità di avere voce in capitolo sulle decisioni importanti in azienda.", "reverse": false},
+            {"text": "Provo soddisfazione nel guidare il cambiamento nei processi aziendali.", "reverse": false},
+            {"text": "Mi piace assumermi la responsabilità di decidere per gli altri.", "reverse": false},
+            {"text": "Mi sento a mio agio nel proporre modifiche strutturali alle procedure di lavoro.", "reverse": false},
+            {"text": "Preferisco ruoli che mi permettano di influenzare l’organizzazione.", "reverse": false},
+            {"text": "Preferisco seguire le decisioni degli altri piuttosto che guidare io stesso il gruppo.", "reverse": true},
+            {"text": "Non sento il bisogno di influenzare le decisioni dell’azienda.", "reverse": true}
+          ]
+        },
+        {
+          "name": "Motivazione alla leadership",
+          "items": [
+            {"text": "Desidero essere riconosciuto come un punto di riferimento nel mio gruppo di lavoro.", "reverse": false},
+            {"text": "Mi piace coordinare il lavoro degli altri.", "reverse": false},
+            {"text": "Mi sento motivato quando posso motivare e ispirare gli altri.", "reverse": false},
+            {"text": "Ritengo importante convincere gli altri delle mie idee.", "reverse": false},
+            {"text": "Gestire e risolvere i conflitti all’interno del gruppo mi stimola.", "reverse": false},
+            {"text": "Non mi sento a mio agio nell’avere responsabilità di coordinamento.", "reverse": true},
+            {"text": "Evito di assumere ruoli di guida nei gruppi di lavoro.", "reverse": true}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Comportamento organizzativo",
+      "scales": [
+        {
+          "name": "Coscienziosità",
+          "items": [
+            {"text": "Presto attenzione ai dettagli in tutto ciò che faccio.", "reverse": false},
+            {"text": "Sono molto ordinato/a nel gestire le mie attività lavorative.", "reverse": false},
+            {"text": "Mi piace pianificare e seguire una scaletta precisa.", "reverse": false},
+            {"text": "Non lascio mai incompiuti i miei compiti.", "reverse": false},
+            {"text": "Sono puntuale nel rispettare scadenze e impegni.", "reverse": false},
+            {"text": "Mi capita spesso di trascurare dettagli importanti nel mio lavoro.", "reverse": true},
+            {"text": "Fatico a rispettare gli impegni presi.", "reverse": true}
+          ]
+        },
+        {
+          "name": "Flessibilità",
+          "items": [
+            {"text": "Mi adatto facilmente ai cambiamenti sul lavoro.", "reverse": false},
+            {"text": "Gestisco con serenità le situazioni impreviste.", "reverse": false},
+            {"text": "Mi piace affrontare nuove sfide e imparare cose diverse.", "reverse": false},
+            {"text": "Modifico le mie priorità se necessario.", "reverse": false},
+            {"text": "Accolgo positivamente le innovazioni.", "reverse": false},
+            {"text": "Ho difficoltà ad accettare cambiamenti improvvisi nelle attività.", "reverse": true},
+            {"text": "Tendo a resistere alle novità introdotte sul lavoro.", "reverse": true}
+          ]
+        },
+        {
+          "name": "Orientamento all’azione",
+          "items": [
+            {"text": "Dopo aver preso una decisione, passo subito all’azione.", "reverse": false},
+            {"text": "Non perdo tempo in riflessioni inutili, preferisco agire.", "reverse": false},
+            {"text": "Riesco a concentrarmi sugli obiettivi senza distrarmi.", "reverse": false},
+            {"text": "Non ho paura di prendere iniziative anche rischiando errori.", "reverse": false},
+            {"text": "Preferisco agire piuttosto che attendere che gli altri si muovano.", "reverse": false},
+            {"text": "Rimando spesso le azioni anche quando so già cosa fare.", "reverse": true},
+            {"text": "Tendo a procrastinare l’inizio di nuove attività.", "reverse": true}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Competenze sociali",
+      "scales": [
+        {
+          "name": "Sensibilità",
+          "items": [
+            {"text": "Riconosco facilmente le emozioni degli altri sul lavoro.", "reverse": false},
+            {"text": "Mi accorgo se un collega è in difficoltà anche senza che lo dica.", "reverse": false},
+            {"text": "Mi adatto al tono emotivo del gruppo.", "reverse": false},
+            {"text": "So leggere tra le righe nei rapporti interpersonali.", "reverse": false},
+            {"text": "Presto attenzione ai segnali non verbali nelle conversazioni.", "reverse": false},
+            {"text": "Mi accorgo raramente di come si sentono i miei colleghi.", "reverse": true},
+            {"text": "Fatico a comprendere le emozioni delle persone con cui lavoro.", "reverse": true}
+          ]
+        },
+        {
+          "name": "Capacità di stabilire contatti",
+          "items": [
+            {"text": "Mi sento a mio agio a parlare con persone sconosciute.", "reverse": false},
+            {"text": "Faccio facilmente nuove conoscenze nell’ambiente di lavoro.", "reverse": false},
+            {"text": "Mi piace ampliare la mia rete di contatti professionali.", "reverse": false},
+            {"text": "Sono proattivo nel mantenere relazioni con colleghi e partner.", "reverse": false},
+            {"text": "Mi muovo volentieri in ambienti nuovi e stimolanti.", "reverse": false},
+            {"text": "Preferisco evitare nuove conoscenze nell’ambiente lavorativo.", "reverse": true},
+            {"text": "Mi sento a disagio quando devo presentarmi a persone sconosciute.", "reverse": true}
+          ]
+        },
+        {
+          "name": "Socievolezza",
+          "items": [
+            {"text": "Preferisco lavorare in un clima sereno e collaborativo.", "reverse": false},
+            {"text": "Cerco di evitare conflitti inutili.", "reverse": false},
+            {"text": "Mi piace condividere le idee con i colleghi.", "reverse": false},
+            {"text": "Tendo ad essere amichevole con tutti.", "reverse": false},
+            {"text": "Lavoro meglio quando il gruppo è unito.", "reverse": false},
+            {"text": "Preferisco lavorare in autonomia piuttosto che in gruppo.", "reverse": true},
+            {"text": "Non amo partecipare ad attività sociali con i colleghi.", "reverse": true}
+          ]
+        },
+        {
+          "name": "Orientamento al team",
+          "items": [
+            {"text": "Lavorare in gruppo mi stimola.", "reverse": false},
+            {"text": "Ritengo importante condividere i successi con il team.", "reverse": false},
+            {"text": "Sono disponibile ad aiutare i colleghi in difficoltà.", "reverse": false},
+            {"text": "Credo che la collaborazione sia fondamentale per il successo.", "reverse": false},
+            {"text": "Accetto di mettere da parte le mie opinioni per il bene del gruppo.", "reverse": false},
+            {"text": "Mi sento più efficiente quando lavoro da solo/a.", "reverse": true},
+            {"text": "Raramente partecipo attivamente alle attività di gruppo.", "reverse": true}
+          ]
+        },
+        {
+          "name": "Assertività",
+          "items": [
+            {"text": "Difendo le mie idee anche se sono in minoranza.", "reverse": false},
+            {"text": "Riesco a farmi valere nelle discussioni di gruppo.", "reverse": false},
+            {"text": "Argomento in modo deciso le mie posizioni.", "reverse": false},
+            {"text": "Non mi lascio influenzare facilmente dagli altri.", "reverse": false},
+            {"text": "Sono in grado di dire “no” quando necessario.", "reverse": false},
+            {"text": "Rinuncio facilmente alle mie opinioni quando trovo opposizione.", "reverse": true},
+            {"text": "Tendo a cedere per evitare discussioni o conflitti.", "reverse": true}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Gestione delle emozioni",
+      "scales": [
+        {
+          "name": "Stabilità emotiva",
+          "items": [
+            {"text": "Gestisco bene lo stress e le critiche.", "reverse": false},
+            {"text": "Mi riprendo rapidamente dopo un insuccesso.", "reverse": false},
+            {"text": "Mantengo la calma anche in situazioni difficili.", "reverse": false},
+            {"text": "Affronto le difficoltà senza farmi prendere dal panico.", "reverse": false},
+            {"text": "Non mi faccio scoraggiare dai momenti negativi.", "reverse": false},
+            {"text": "Mi lascio facilmente abbattere dalle difficoltà sul lavoro.", "reverse": true},
+            {"text": "Le emozioni negative spesso compromettono il mio rendimento.", "reverse": true}
+          ]
+        },
+        {
+          "name": "Capacità di lavorare sotto pressione",
+          "items": [
+            {"text": "Mantengo alte le prestazioni anche con molte scadenze ravvicinate.", "reverse": false},
+            {"text": "Reggo bene il carico di lavoro intenso.", "reverse": false},
+            {"text": "Non mi faccio prendere dal nervosismo in situazioni pressanti.", "reverse": false},
+            {"text": "Riesco a rispettare i tempi anche in condizioni di stress.", "reverse": false},
+            {"text": "Lavoro bene anche in emergenza.", "reverse": false},
+            {"text": "Sotto pressione tendo a perdere il controllo delle mie attività.", "reverse": true},
+            {"text": "In presenza di molte richieste simultanee, la qualità del mio lavoro diminuisce.", "reverse": true}
+          ]
+        },
+        {
+          "name": "Fiducia in se stessi",
+          "items": [
+            {"text": "Sono sicuro/a delle mie capacità professionali.", "reverse": false},
+            {"text": "Non temo di espormi e di esprimere le mie opinioni.", "reverse": false},
+            {"text": "Non mi lascio condizionare dal giudizio degli altri.", "reverse": false},
+            {"text": "Mi sento all’altezza delle responsabilità affidate.", "reverse": false},
+            {"text": "Affronto con sicurezza nuove sfide lavorative.", "reverse": false},
+            {"text": "Dubito spesso delle mie capacità lavorative.", "reverse": true},
+            {"text": "Le critiche degli altri mi fanno perdere fiducia in me stesso/a.", "reverse": true}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Desiderabilità sociale",
+      "scales": [
+        {
+          "name": "Desiderabilità sociale",
+          "items": [
+            {"text": "Rispondo sempre in modo onesto ai questionari.", "reverse": false},
+            {"text": "Preferisco ammettere i miei errori piuttosto che nasconderli.", "reverse": false},
+            {"text": "Non sento il bisogno di apparire perfetto agli occhi degli altri.", "reverse": false},
+            {"text": "Sono consapevole anche dei miei limiti e non li nascondo.", "reverse": false},
+            {"text": "Cerco sempre di mostrare solo i miei aspetti migliori agli altri.", "reverse": true},
+            {"text": "Mi interessa apparire migliore di quello che sono realmente.", "reverse": true}
+          ]
+        }
+      ]
+    }
+  ]
+}

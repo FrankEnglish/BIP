@@ -315,10 +315,921 @@
     "data": ""
   },
   "GO2B-NYEPH7": {
-    "usato": false,
-    "email": "",
-    "nome": "",
-    "data": ""
+    "usato": true,
+    "email": "inglese.f@gmail.com",
+    "nome": "Francesco Inglese",
+    "data": "30/05/2025 15:54",
+    "risposte_dettaglio": [
+      {
+        "idx": 1,
+        "text": "Mi impegno al massimo per raggiungere gli obiettivi che mi vengono assegnati.",
+        "scala": "Motivazione al risultato",
+        "answer": 3,
+        "punteggio": 3,
+        "reverse": false
+      },
+      {
+        "idx": 2,
+        "text": "Trovo soddisfazione solo quando supero le aspettative del mio ruolo.",
+        "scala": "Motivazione al risultato",
+        "answer": 4,
+        "punteggio": 4,
+        "reverse": false
+      },
+      {
+        "idx": 3,
+        "text": "Cerco sempre di migliorarmi anche quando ottengo buoni risultati.",
+        "scala": "Motivazione al risultato",
+        "answer": 3,
+        "punteggio": 3,
+        "reverse": false
+      },
+      {
+        "idx": 4,
+        "text": "Mi pongo regolarmente obiettivi sfidanti.",
+        "scala": "Motivazione al risultato",
+        "answer": 5,
+        "punteggio": 5,
+        "reverse": false
+      },
+      {
+        "idx": 5,
+        "text": "Sono disposto/a a fare sacrifici personali per raggiungere un risultato importante.",
+        "scala": "Motivazione al risultato",
+        "answer": 4,
+        "punteggio": 4,
+        "reverse": false
+      },
+      {
+        "idx": 6,
+        "text": "Rinuncio facilmente se un compito risulta troppo difficile.",
+        "scala": "Motivazione al risultato",
+        "answer": 4,
+        "punteggio": 3,
+        "reverse": true
+      },
+      {
+        "idx": 7,
+        "text": "Evito situazioni in cui devo confrontarmi con obiettivi ambiziosi.",
+        "scala": "Motivazione al risultato",
+        "answer": 4,
+        "punteggio": 3,
+        "reverse": true
+      },
+      {
+        "idx": 8,
+        "text": "Sento la necessità di avere voce in capitolo sulle decisioni importanti in azienda.",
+        "scala": "Motivazione al potere",
+        "answer": 4,
+        "punteggio": 4,
+        "reverse": false
+      },
+      {
+        "idx": 9,
+        "text": "Provo soddisfazione nel guidare il cambiamento nei processi aziendali.",
+        "scala": "Motivazione al potere",
+        "answer": 4,
+        "punteggio": 4,
+        "reverse": false
+      },
+      {
+        "idx": 10,
+        "text": "Mi piace assumermi la responsabilità di decidere per gli altri.",
+        "scala": "Motivazione al potere",
+        "answer": 4,
+        "punteggio": 4,
+        "reverse": false
+      },
+      {
+        "idx": 11,
+        "text": "Mi sento a mio agio nel proporre modifiche strutturali alle procedure di lavoro.",
+        "scala": "Motivazione al potere",
+        "answer": 3,
+        "punteggio": 3,
+        "reverse": false
+      },
+      {
+        "idx": 12,
+        "text": "Preferisco ruoli che mi permettano di influenzare l’organizzazione.",
+        "scala": "Motivazione al potere",
+        "answer": 4,
+        "punteggio": 4,
+        "reverse": false
+      },
+      {
+        "idx": 13,
+        "text": "Preferisco seguire le decisioni degli altri piuttosto che guidare io stesso il gruppo.",
+        "scala": "Motivazione al potere",
+        "answer": 3,
+        "punteggio": 4,
+        "reverse": true
+      },
+      {
+        "idx": 14,
+        "text": "Non sento il bisogno di influenzare le decisioni dell’azienda.",
+        "scala": "Motivazione al potere",
+        "answer": 3,
+        "punteggio": 4,
+        "reverse": true
+      },
+      {
+        "idx": 15,
+        "text": "Desidero essere riconosciuto come un punto di riferimento nel mio gruppo di lavoro.",
+        "scala": "Motivazione alla leadership",
+        "answer": 2,
+        "punteggio": 2,
+        "reverse": false
+      },
+      {
+        "idx": 16,
+        "text": "Mi piace coordinare il lavoro degli altri.",
+        "scala": "Motivazione alla leadership",
+        "answer": 4,
+        "punteggio": 4,
+        "reverse": false
+      },
+      {
+        "idx": 17,
+        "text": "Mi sento motivato quando posso motivare e ispirare gli altri.",
+        "scala": "Motivazione alla leadership",
+        "answer": 3,
+        "punteggio": 3,
+        "reverse": false
+      },
+      {
+        "idx": 18,
+        "text": "Ritengo importante convincere gli altri delle mie idee.",
+        "scala": "Motivazione alla leadership",
+        "answer": 4,
+        "punteggio": 4,
+        "reverse": false
+      },
+      {
+        "idx": 19,
+        "text": "Gestire e risolvere i conflitti all’interno del gruppo mi stimola.",
+        "scala": "Motivazione alla leadership",
+        "answer": 3,
+        "punteggio": 3,
+        "reverse": false
+      },
+      {
+        "idx": 20,
+        "text": "Non mi sento a mio agio nell’avere responsabilità di coordinamento.",
+        "scala": "Motivazione alla leadership",
+        "answer": 4,
+        "punteggio": 3,
+        "reverse": true
+      },
+      {
+        "idx": 21,
+        "text": "Evito di assumere ruoli di guida nei gruppi di lavoro.",
+        "scala": "Motivazione alla leadership",
+        "answer": 3,
+        "punteggio": 4,
+        "reverse": true
+      },
+      {
+        "idx": 22,
+        "text": "Presto attenzione ai dettagli in tutto ciò che faccio.",
+        "scala": "Coscienziosità",
+        "answer": 4,
+        "punteggio": 4,
+        "reverse": false
+      },
+      {
+        "idx": 23,
+        "text": "Sono molto ordinato/a nel gestire le mie attività lavorative.",
+        "scala": "Coscienziosità",
+        "answer": 3,
+        "punteggio": 3,
+        "reverse": false
+      },
+      {
+        "idx": 24,
+        "text": "Mi piace pianificare e seguire una scaletta precisa.",
+        "scala": "Coscienziosità",
+        "answer": 4,
+        "punteggio": 4,
+        "reverse": false
+      },
+      {
+        "idx": 25,
+        "text": "Non lascio mai incompiuti i miei compiti.",
+        "scala": "Coscienziosità",
+        "answer": 3,
+        "punteggio": 3,
+        "reverse": false
+      },
+      {
+        "idx": 26,
+        "text": "Sono puntuale nel rispettare scadenze e impegni.",
+        "scala": "Coscienziosità",
+        "answer": 4,
+        "punteggio": 4,
+        "reverse": false
+      },
+      {
+        "idx": 27,
+        "text": "Mi capita spesso di trascurare dettagli importanti nel mio lavoro.",
+        "scala": "Coscienziosità",
+        "answer": 2,
+        "punteggio": 5,
+        "reverse": true
+      },
+      {
+        "idx": 28,
+        "text": "Fatico a rispettare gli impegni presi.",
+        "scala": "Coscienziosità",
+        "answer": 4,
+        "punteggio": 3,
+        "reverse": true
+      },
+      {
+        "idx": 29,
+        "text": "Mi adatto facilmente ai cambiamenti sul lavoro.",
+        "scala": "Flessibilità",
+        "answer": 3,
+        "punteggio": 3,
+        "reverse": false
+      },
+      {
+        "idx": 30,
+        "text": "Gestisco con serenità le situazioni impreviste.",
+        "scala": "Flessibilità",
+        "answer": 4,
+        "punteggio": 4,
+        "reverse": false
+      },
+      {
+        "idx": 31,
+        "text": "Mi piace affrontare nuove sfide e imparare cose diverse.",
+        "scala": "Flessibilità",
+        "answer": 3,
+        "punteggio": 3,
+        "reverse": false
+      },
+      {
+        "idx": 32,
+        "text": "Modifico le mie priorità se necessario.",
+        "scala": "Flessibilità",
+        "answer": 4,
+        "punteggio": 4,
+        "reverse": false
+      },
+      {
+        "idx": 33,
+        "text": "Accolgo positivamente le innovazioni.",
+        "scala": "Flessibilità",
+        "answer": 3,
+        "punteggio": 3,
+        "reverse": false
+      },
+      {
+        "idx": 34,
+        "text": "Ho difficoltà ad accettare cambiamenti improvvisi nelle attività.",
+        "scala": "Flessibilità",
+        "answer": 4,
+        "punteggio": 3,
+        "reverse": true
+      },
+      {
+        "idx": 35,
+        "text": "Tendo a resistere alle novità introdotte sul lavoro.",
+        "scala": "Flessibilità",
+        "answer": 3,
+        "punteggio": 4,
+        "reverse": true
+      },
+      {
+        "idx": 36,
+        "text": "Dopo aver preso una decisione, passo subito all’azione.",
+        "scala": "Orientamento all’azione",
+        "answer": 4,
+        "punteggio": 4,
+        "reverse": false
+      },
+      {
+        "idx": 37,
+        "text": "Non perdo tempo in riflessioni inutili, preferisco agire.",
+        "scala": "Orientamento all’azione",
+        "answer": 3,
+        "punteggio": 3,
+        "reverse": false
+      },
+      {
+        "idx": 38,
+        "text": "Riesco a concentrarmi sugli obiettivi senza distrarmi.",
+        "scala": "Orientamento all’azione",
+        "answer": 3,
+        "punteggio": 3,
+        "reverse": false
+      },
+      {
+        "idx": 39,
+        "text": "Non ho paura di prendere iniziative anche rischiando errori.",
+        "scala": "Orientamento all’azione",
+        "answer": 3,
+        "punteggio": 3,
+        "reverse": false
+      },
+      {
+        "idx": 40,
+        "text": "Preferisco agire piuttosto che attendere che gli altri si muovano.",
+        "scala": "Orientamento all’azione",
+        "answer": 3,
+        "punteggio": 3,
+        "reverse": false
+      },
+      {
+        "idx": 41,
+        "text": "Rimando spesso le azioni anche quando so già cosa fare.",
+        "scala": "Orientamento all’azione",
+        "answer": 4,
+        "punteggio": 3,
+        "reverse": true
+      },
+      {
+        "idx": 42,
+        "text": "Tendo a procrastinare l’inizio di nuove attività.",
+        "scala": "Orientamento all’azione",
+        "answer": 3,
+        "punteggio": 4,
+        "reverse": true
+      },
+      {
+        "idx": 43,
+        "text": "Riconosco facilmente le emozioni degli altri sul lavoro.",
+        "scala": "Sensibilità",
+        "answer": 4,
+        "punteggio": 4,
+        "reverse": false
+      },
+      {
+        "idx": 44,
+        "text": "Mi accorgo se un collega è in difficoltà anche senza che lo dica.",
+        "scala": "Sensibilità",
+        "answer": 3,
+        "punteggio": 3,
+        "reverse": false
+      },
+      {
+        "idx": 45,
+        "text": "Mi adatto al tono emotivo del gruppo.",
+        "scala": "Sensibilità",
+        "answer": 4,
+        "punteggio": 4,
+        "reverse": false
+      },
+      {
+        "idx": 46,
+        "text": "So leggere tra le righe nei rapporti interpersonali.",
+        "scala": "Sensibilità",
+        "answer": 3,
+        "punteggio": 3,
+        "reverse": false
+      },
+      {
+        "idx": 47,
+        "text": "Presto attenzione ai segnali non verbali nelle conversazioni.",
+        "scala": "Sensibilità",
+        "answer": 4,
+        "punteggio": 4,
+        "reverse": false
+      },
+      {
+        "idx": 48,
+        "text": "Mi accorgo raramente di come si sentono i miei colleghi.",
+        "scala": "Sensibilità",
+        "answer": 3,
+        "punteggio": 4,
+        "reverse": true
+      },
+      {
+        "idx": 49,
+        "text": "Fatico a comprendere le emozioni delle persone con cui lavoro.",
+        "scala": "Sensibilità",
+        "answer": 5,
+        "punteggio": 2,
+        "reverse": true
+      },
+      {
+        "idx": 50,
+        "text": "Mi sento a mio agio a parlare con persone sconosciute.",
+        "scala": "Capacità di stabilire contatti",
+        "answer": 4,
+        "punteggio": 4,
+        "reverse": false
+      },
+      {
+        "idx": 51,
+        "text": "Faccio facilmente nuove conoscenze nell’ambiente di lavoro.",
+        "scala": "Capacità di stabilire contatti",
+        "answer": 3,
+        "punteggio": 3,
+        "reverse": false
+      },
+      {
+        "idx": 52,
+        "text": "Mi piace ampliare la mia rete di contatti professionali.",
+        "scala": "Capacità di stabilire contatti",
+        "answer": 3,
+        "punteggio": 3,
+        "reverse": false
+      },
+      {
+        "idx": 53,
+        "text": "Sono proattivo nel mantenere relazioni con colleghi e partner.",
+        "scala": "Capacità di stabilire contatti",
+        "answer": 3,
+        "punteggio": 3,
+        "reverse": false
+      },
+      {
+        "idx": 54,
+        "text": "Mi muovo volentieri in ambienti nuovi e stimolanti.",
+        "scala": "Capacità di stabilire contatti",
+        "answer": 3,
+        "punteggio": 3,
+        "reverse": false
+      },
+      {
+        "idx": 55,
+        "text": "Preferisco evitare nuove conoscenze nell’ambiente lavorativo.",
+        "scala": "Capacità di stabilire contatti",
+        "answer": 3,
+        "punteggio": 4,
+        "reverse": true
+      },
+      {
+        "idx": 56,
+        "text": "Mi sento a disagio quando devo presentarmi a persone sconosciute.",
+        "scala": "Capacità di stabilire contatti",
+        "answer": 3,
+        "punteggio": 4,
+        "reverse": true
+      },
+      {
+        "idx": 57,
+        "text": "Preferisco lavorare in un clima sereno e collaborativo.",
+        "scala": "Socievolezza",
+        "answer": 4,
+        "punteggio": 4,
+        "reverse": false
+      },
+      {
+        "idx": 58,
+        "text": "Cerco di evitare conflitti inutili.",
+        "scala": "Socievolezza",
+        "answer": 3,
+        "punteggio": 3,
+        "reverse": false
+      },
+      {
+        "idx": 59,
+        "text": "Mi piace condividere le idee con i colleghi.",
+        "scala": "Socievolezza",
+        "answer": 4,
+        "punteggio": 4,
+        "reverse": false
+      },
+      {
+        "idx": 60,
+        "text": "Tendo ad essere amichevole con tutti.",
+        "scala": "Socievolezza",
+        "answer": 4,
+        "punteggio": 4,
+        "reverse": false
+      },
+      {
+        "idx": 61,
+        "text": "Lavoro meglio quando il gruppo è unito.",
+        "scala": "Socievolezza",
+        "answer": 4,
+        "punteggio": 4,
+        "reverse": false
+      },
+      {
+        "idx": 62,
+        "text": "Preferisco lavorare in autonomia piuttosto che in gruppo.",
+        "scala": "Socievolezza",
+        "answer": 4,
+        "punteggio": 3,
+        "reverse": true
+      },
+      {
+        "idx": 63,
+        "text": "Non amo partecipare ad attività sociali con i colleghi.",
+        "scala": "Socievolezza",
+        "answer": 4,
+        "punteggio": 3,
+        "reverse": true
+      },
+      {
+        "idx": 64,
+        "text": "Lavorare in gruppo mi stimola.",
+        "scala": "Orientamento al team",
+        "answer": 4,
+        "punteggio": 4,
+        "reverse": false
+      },
+      {
+        "idx": 65,
+        "text": "Ritengo importante condividere i successi con il team.",
+        "scala": "Orientamento al team",
+        "answer": 4,
+        "punteggio": 4,
+        "reverse": false
+      },
+      {
+        "idx": 66,
+        "text": "Sono disponibile ad aiutare i colleghi in difficoltà.",
+        "scala": "Orientamento al team",
+        "answer": 4,
+        "punteggio": 4,
+        "reverse": false
+      },
+      {
+        "idx": 67,
+        "text": "Credo che la collaborazione sia fondamentale per il successo.",
+        "scala": "Orientamento al team",
+        "answer": 5,
+        "punteggio": 5,
+        "reverse": false
+      },
+      {
+        "idx": 68,
+        "text": "Accetto di mettere da parte le mie opinioni per il bene del gruppo.",
+        "scala": "Orientamento al team",
+        "answer": 3,
+        "punteggio": 3,
+        "reverse": false
+      },
+      {
+        "idx": 69,
+        "text": "Mi sento più efficiente quando lavoro da solo/a.",
+        "scala": "Orientamento al team",
+        "answer": 4,
+        "punteggio": 3,
+        "reverse": true
+      },
+      {
+        "idx": 70,
+        "text": "Raramente partecipo attivamente alle attività di gruppo.",
+        "scala": "Orientamento al team",
+        "answer": 5,
+        "punteggio": 2,
+        "reverse": true
+      },
+      {
+        "idx": 71,
+        "text": "Difendo le mie idee anche se sono in minoranza.",
+        "scala": "Assertività",
+        "answer": 4,
+        "punteggio": 4,
+        "reverse": false
+      },
+      {
+        "idx": 72,
+        "text": "Riesco a farmi valere nelle discussioni di gruppo.",
+        "scala": "Assertività",
+        "answer": 5,
+        "punteggio": 5,
+        "reverse": false
+      },
+      {
+        "idx": 73,
+        "text": "Argomento in modo deciso le mie posizioni.",
+        "scala": "Assertività",
+        "answer": 4,
+        "punteggio": 4,
+        "reverse": false
+      },
+      {
+        "idx": 74,
+        "text": "Non mi lascio influenzare facilmente dagli altri.",
+        "scala": "Assertività",
+        "answer": 3,
+        "punteggio": 3,
+        "reverse": false
+      },
+      {
+        "idx": 75,
+        "text": "Sono in grado di dire “no” quando necessario.",
+        "scala": "Assertività",
+        "answer": 4,
+        "punteggio": 4,
+        "reverse": false
+      },
+      {
+        "idx": 76,
+        "text": "Rinuncio facilmente alle mie opinioni quando trovo opposizione.",
+        "scala": "Assertività",
+        "answer": 4,
+        "punteggio": 3,
+        "reverse": true
+      },
+      {
+        "idx": 77,
+        "text": "Tendo a cedere per evitare discussioni o conflitti.",
+        "scala": "Assertività",
+        "answer": 5,
+        "punteggio": 2,
+        "reverse": true
+      },
+      {
+        "idx": 78,
+        "text": "Gestisco bene lo stress e le critiche.",
+        "scala": "Stabilità emotiva",
+        "answer": 4,
+        "punteggio": 4,
+        "reverse": false
+      },
+      {
+        "idx": 79,
+        "text": "Mi riprendo rapidamente dopo un insuccesso.",
+        "scala": "Stabilità emotiva",
+        "answer": 3,
+        "punteggio": 3,
+        "reverse": false
+      },
+      {
+        "idx": 80,
+        "text": "Mantengo la calma anche in situazioni difficili.",
+        "scala": "Stabilità emotiva",
+        "answer": 4,
+        "punteggio": 4,
+        "reverse": false
+      },
+      {
+        "idx": 81,
+        "text": "Affronto le difficoltà senza farmi prendere dal panico.",
+        "scala": "Stabilità emotiva",
+        "answer": 5,
+        "punteggio": 5,
+        "reverse": false
+      },
+      {
+        "idx": 82,
+        "text": "Non mi faccio scoraggiare dai momenti negativi.",
+        "scala": "Stabilità emotiva",
+        "answer": 5,
+        "punteggio": 5,
+        "reverse": false
+      },
+      {
+        "idx": 83,
+        "text": "Mi lascio facilmente abbattere dalle difficoltà sul lavoro.",
+        "scala": "Stabilità emotiva",
+        "answer": 6,
+        "punteggio": 1,
+        "reverse": true
+      },
+      {
+        "idx": 84,
+        "text": "Le emozioni negative spesso compromettono il mio rendimento.",
+        "scala": "Stabilità emotiva",
+        "answer": 4,
+        "punteggio": 3,
+        "reverse": true
+      },
+      {
+        "idx": 85,
+        "text": "Mantengo alte le prestazioni anche con molte scadenze ravvicinate.",
+        "scala": "Capacità di lavorare sotto pressione",
+        "answer": 3,
+        "punteggio": 3,
+        "reverse": false
+      },
+      {
+        "idx": 86,
+        "text": "Reggo bene il carico di lavoro intenso.",
+        "scala": "Capacità di lavorare sotto pressione",
+        "answer": 5,
+        "punteggio": 5,
+        "reverse": false
+      },
+      {
+        "idx": 87,
+        "text": "Non mi faccio prendere dal nervosismo in situazioni pressanti.",
+        "scala": "Capacità di lavorare sotto pressione",
+        "answer": 4,
+        "punteggio": 4,
+        "reverse": false
+      },
+      {
+        "idx": 88,
+        "text": "Riesco a rispettare i tempi anche in condizioni di stress.",
+        "scala": "Capacità di lavorare sotto pressione",
+        "answer": 3,
+        "punteggio": 3,
+        "reverse": false
+      },
+      {
+        "idx": 89,
+        "text": "Lavoro bene anche in emergenza.",
+        "scala": "Capacità di lavorare sotto pressione",
+        "answer": 4,
+        "punteggio": 4,
+        "reverse": false
+      },
+      {
+        "idx": 90,
+        "text": "Sotto pressione tendo a perdere il controllo delle mie attività.",
+        "scala": "Capacità di lavorare sotto pressione",
+        "answer": 3,
+        "punteggio": 4,
+        "reverse": true
+      },
+      {
+        "idx": 91,
+        "text": "In presenza di molte richieste simultanee, la qualità del mio lavoro diminuisce.",
+        "scala": "Capacità di lavorare sotto pressione",
+        "answer": 1,
+        "punteggio": 6,
+        "reverse": true
+      },
+      {
+        "idx": 92,
+        "text": "Sono sicuro/a delle mie capacità professionali.",
+        "scala": "Fiducia in se stessi",
+        "answer": 5,
+        "punteggio": 5,
+        "reverse": false
+      },
+      {
+        "idx": 93,
+        "text": "Non temo di espormi e di esprimere le mie opinioni.",
+        "scala": "Fiducia in se stessi",
+        "answer": 4,
+        "punteggio": 4,
+        "reverse": false
+      },
+      {
+        "idx": 94,
+        "text": "Non mi lascio condizionare dal giudizio degli altri.",
+        "scala": "Fiducia in se stessi",
+        "answer": 3,
+        "punteggio": 3,
+        "reverse": false
+      },
+      {
+        "idx": 95,
+        "text": "Mi sento all’altezza delle responsabilità affidate.",
+        "scala": "Fiducia in se stessi",
+        "answer": 4,
+        "punteggio": 4,
+        "reverse": false
+      },
+      {
+        "idx": 96,
+        "text": "Affronto con sicurezza nuove sfide lavorative.",
+        "scala": "Fiducia in se stessi",
+        "answer": 3,
+        "punteggio": 3,
+        "reverse": false
+      },
+      {
+        "idx": 97,
+        "text": "Dubito spesso delle mie capacità lavorative.",
+        "scala": "Fiducia in se stessi",
+        "answer": 4,
+        "punteggio": 3,
+        "reverse": true
+      },
+      {
+        "idx": 98,
+        "text": "Le critiche degli altri mi fanno perdere fiducia in me stesso/a.",
+        "scala": "Fiducia in se stessi",
+        "answer": 5,
+        "punteggio": 2,
+        "reverse": true
+      },
+      {
+        "idx": 99,
+        "text": "Rispondo sempre in modo onesto ai questionari.",
+        "scala": "Desiderabilità sociale",
+        "answer": 4,
+        "punteggio": 4,
+        "reverse": false
+      },
+      {
+        "idx": 100,
+        "text": "Preferisco ammettere i miei errori piuttosto che nasconderli.",
+        "scala": "Desiderabilità sociale",
+        "answer": 3,
+        "punteggio": 3,
+        "reverse": false
+      },
+      {
+        "idx": 101,
+        "text": "Non sento il bisogno di apparire perfetto agli occhi degli altri.",
+        "scala": "Desiderabilità sociale",
+        "answer": 4,
+        "punteggio": 4,
+        "reverse": false
+      },
+      {
+        "idx": 102,
+        "text": "Sono consapevole anche dei miei limiti e non li nascondo.",
+        "scala": "Desiderabilità sociale",
+        "answer": 5,
+        "punteggio": 5,
+        "reverse": false
+      },
+      {
+        "idx": 103,
+        "text": "Cerco sempre di mostrare solo i miei aspetti migliori agli altri.",
+        "scala": "Desiderabilità sociale",
+        "answer": 3,
+        "punteggio": 4,
+        "reverse": true
+      },
+      {
+        "idx": 104,
+        "text": "Mi interessa apparire migliore di quello che sono realmente.",
+        "scala": "Desiderabilità sociale",
+        "answer": 5,
+        "punteggio": 2,
+        "reverse": true
+      }
+    ],
+    "report": {
+      "Motivazione al risultato": {
+        "punteggio_grezzo": 25,
+        "percentile": 33,
+        "stanina": 5
+      },
+      "Motivazione al potere": {
+        "punteggio_grezzo": 27,
+        "percentile": 17,
+        "stanina": 3
+      },
+      "Motivazione alla leadership": {
+        "punteggio_grezzo": 23,
+        "percentile": 17,
+        "stanina": 3
+      },
+      "Coscienziosità": {
+        "punteggio_grezzo": 26,
+        "percentile": 50,
+        "stanina": 6
+      },
+      "Flessibilità": {
+        "punteggio_grezzo": 24,
+        "percentile": 33,
+        "stanina": 5
+      },
+      "Orientamento all’azione": {
+        "punteggio_grezzo": 23,
+        "percentile": 17,
+        "stanina": 3
+      },
+      "Sensibilità": {
+        "punteggio_grezzo": 24,
+        "percentile": 17,
+        "stanina": 3
+      },
+      "Capacità di stabilire contatti": {
+        "punteggio_grezzo": 24,
+        "percentile": 33,
+        "stanina": 5
+      },
+      "Socievolezza": {
+        "punteggio_grezzo": 25,
+        "percentile": 0,
+        "stanina": 2
+      },
+      "Orientamento al team": {
+        "punteggio_grezzo": 25,
+        "percentile": 33,
+        "stanina": 5
+      },
+      "Assertività": {
+        "punteggio_grezzo": 25,
+        "percentile": 17,
+        "stanina": 3
+      },
+      "Stabilità emotiva": {
+        "punteggio_grezzo": 25,
+        "percentile": 50,
+        "stanina": 6
+      },
+      "Capacità di lavorare sotto pressione": {
+        "punteggio_grezzo": 29,
+        "percentile": 33,
+        "stanina": 5
+      },
+      "Fiducia in se stessi": {
+        "punteggio_grezzo": 24,
+        "percentile": 33,
+        "stanina": 5
+      },
+      "Desiderabilità sociale": {
+        "punteggio_grezzo": 22,
+        "percentile": 50,
+        "stanina": 6
+      }
+    }
   },
   "GO2B-GX46ZN": {
     "usato": false,

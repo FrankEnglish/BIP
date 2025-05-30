@@ -144,12 +144,12 @@ def question(idx):
         answers = session.get("answers", [])
         answers.append(answer)
         session["answers"] = answers
-        if idx+1 < len(items):
-            return redirect(url_for('question', idx=idx+1))
+        if idx + 1 < len(items):
+            return redirect(url_for('question', idx=idx + 1))
         else:
             return redirect(url_for("result"))
     item = items[idx]
-    return render_template("question.html", idx=idx+1, total=len(items), item=item)
+    return render_template("question.html", idx=idx + 1, total=len(items), item=item)
 
 @app.route("/result")
 def result():
@@ -159,7 +159,7 @@ def result():
     for i, ans in enumerate(answers):
         scala = items[i]['scala']
         rev = items[i]['reverse']
-        val = 7-ans if rev else ans
+        val = 7 - ans if rev else ans
         scores.setdefault(scala, []).append(val)
     sum_scores = {s: sum(v) for s, v in scores.items()}
     for scala, score in sum_scores.items():
@@ -169,7 +169,7 @@ def result():
     report = {}
     for scala, score in sum_scores.items():
         scores_scala = [x["score"] for x in database_storico if x["scala"] == scala]
-        percentile = int(round((np.sum(np.array(scores_scala) < score) / len(scores_scala))*100))
+        percentile = int(round((np.sum(np.array(scores_scala) < score) / len(scores_scala)) * 100))
         sorted_scores = sorted(scores_scala)
         position = sorted_scores.index(score)
         stanina = int(np.ceil(((position + 1) / len(sorted_scores)) * 9))
@@ -181,32 +181,32 @@ def result():
         }
     alert = False
     ds = report.get("Desiderabilità sociale", {})
-    if ds and (ds.get("percentile",0) >= 85 or ds.get("stanina",0) >= 8):
+    if ds and (ds.get("percentile", 0) >= 85 or ds.get("stanina", 0) >= 8):
         alert = True
-
-    # ---- RISPOSTE DETTAGLIO PER IL REPORT
     risposte_dettaglio = []
     for i, ans in enumerate(answers):
         item = items[i]
         reverse = item['reverse']
-        punteggio = 7-ans if reverse else ans
+        punteggio = 7 - ans if reverse else ans
         risposte_dettaglio.append({
-            "idx": i+1,
+            "idx": i + 1,
             "text": item['text'],
             "scala": item['scala'],
             "answer": ans,
             "punteggio": punteggio,
             "reverse": reverse
         })
-    # Salva le risposte dettaglio come storico nel file codici_seriali.json
     codici = carica_codici()
     seriale = session.get("seriale")
     email = session.get("email")
+    print(f"SALVO SU {seriale} - {email}")
     if seriale in codici:
         codici[seriale]["risposte_dettaglio"] = risposte_dettaglio
         codici[seriale]["report"] = report
         salva_codici(codici)
-
+        print("SALVATO CORRETTAMENTE")
+    else:
+        print("SERIALE NON TROVATO, NON SALVO!")
     return render_template(
         "result.html",
         report=report,
@@ -265,7 +265,7 @@ def admin_report(email, seriale):
     report = user.get("report", {})
     alert = False
     ds = report.get("Desiderabilità sociale", {})
-    if ds and (ds.get("percentile",0) >= 85 or ds.get("stanina",0) >= 8):
+    if ds and (ds.get("percentile", 0) >= 85 or ds.get("stanina", 0) >= 8):
         alert = True
     return render_template(
         "result.html",
@@ -286,39 +286,15 @@ def codici_excel():
     output = io.BytesIO()
     workbook = xlsxwriter.Workbook(output, {'in_memory': True})
     worksheet = workbook.add_worksheet("Codici")
-    worksheet.write(0, 0, "Codice seriale")
+    worksheet.write(0, 0, "Codice Serial")
+    worksheet.write(0, 1, "Usato")
+    worksheet.write(0, 2, "Nome")
+    worksheet.write(0, 3, "Email")
     for idx, code in enumerate(codici):
-        worksheet.write(idx+1, 0, code)
+        worksheet.write(idx + 1, 0, code)
     workbook.close()
     output.seek(0)
-    return send_file(
-        output,
-        download_name="codici_seriali.xlsx",
-        as_attachment=True,
-        mimetype="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
-    )
-
-@app.route("/admin/export")
-def admin_export():
-    if not session.get("admin_logged"):
-        return redirect(url_for("admin_login"))
-    codici = carica_codici()
-    rows = "Nome,Email,Seriale,Data\n"
-    for s, info in codici.items():
-        if info["usato"]:
-            rows += f"{info['nome']},{info['email']},{s},{info.get('data','')}\n"
-    return Response(
-        rows,
-        mimetype="text/csv",
-        headers={"Content-Disposition": "attachment;filename=utenti_registrati.csv"}
-    )
-
-@app.route("/admin_logout")
-def admin_logout():
-    session.pop("admin_logged", None)
-    return redirect(url_for("login"))
-
-# ===================================================
+    return send_file(output, attachment_filename="ultimi_codici.xlsx", as_attachment=True)
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=81, debug=True)
+    app.run(host="0.0.0.0", port=8080, debug=True)

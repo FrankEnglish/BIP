@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, session, Response, send_file
+from flask import Flask, render_template, request, redirect, url_for, session, Response, send_file, jsonify
 import json
 import numpy as np
 import os
@@ -62,6 +62,64 @@ def get_ultimi_codici():
             return json.load(f)
     else:
         return []
+
+def get_admin_stats():
+    """Calcola statistiche per il dashboard admin"""
+    codici = carica_codici()
+
+    total_codes = len(codici)
+    used_codes = sum(1 for c in codici.values() if c.get("usato", False))
+    completed_tests = sum(1 for c in codici.values() if c.get("usato", False) and c.get("report"))
+
+    usage_rate = round((used_codes / total_codes) * 100, 1) if total_codes > 0 else 0
+    completion_rate = round((completed_tests / used_codes) * 100, 1) if used_codes > 0 else 0
+
+    return {
+        "total_codes": total_codes,
+        "used_codes": used_codes,
+        "completed_tests": completed_tests,
+        "available_codes": total_codes - used_codes,
+        "usage_rate": usage_rate,
+        "completion_rate": completion_rate
+    }
+
+def get_usage_trend():
+    """Analizza il trend di utilizzo negli ultimi giorni"""
+    codici = carica_codici()
+    usage_by_date = {}
+
+    for seriale, info in codici.items():
+        if info.get("usato") and info.get("data"):
+            try:
+                date_str = info["data"].split(" ")[0]  # Prende solo la data
+                if date_str in usage_by_date:
+                    usage_by_date[date_str] += 1
+                else:
+                    usage_by_date[date_str] = 1
+            except:
+                continue
+
+    return usage_by_date
+
+def get_scale_averages():
+    """Calcola le medie per scala dai test completati"""
+    codici = carica_codici()
+    scale_scores = {}
+
+    for seriale, info in codici.items():
+        if info.get("report"):
+            for scala, dati in info["report"].items():
+                if scala not in scale_scores:
+                    scale_scores[scala] = []
+                scale_scores[scala].append(dati.get("punteggio_grezzo", 0))
+
+    # Calcola medie
+    scale_averages = {}
+    for scala, scores in scale_scores.items():
+        if scores:
+            scale_averages[scala] = round(np.mean(scores), 1)
+
+    return scale_averages
 
 # ========== FINE UTILITY CODICI SERIALI ==========
 
@@ -237,26 +295,97 @@ def admin_login():
 def admin_dashboard():
     if not session.get("admin_logged"):
         return redirect(url_for("admin_login"))
+
     serials_list = []
+    success_message = None
+
     if request.method == "POST" and "genera" in request.form:
-        serials_list = genera_codici_batch(50, "GO2B")
+        try:
+            num_codici = int(request.form.get("num_codici", 50))
+            serials_list = genera_codici_batch(num_codici, "GO2B")
+            success_message = f"{num_codici} nuovi codici generati con successo!"
+        except Exception as e:
+            success_message = f"Errore nella generazione: {str(e)}"
     else:
         serials_list = get_ultimi_codici()
+
+    # Ottieni statistiche
+    stats = get_admin_stats()
+
+    # Ottieni utenti
     codici = carica_codici()
     utenti = []
     for s, info in codici.items():
         if info["usato"]:
+            # Calcola se ha alert di desiderabilità sociale
+            has_alert = False
+            if info.get("report"):
+                ds = info["report"].get("Desiderabilità sociale", {})
+                has_alert = ds.get("percentile", 0) >= 85 or ds.get("stanina", 0) >= 8
+
             utenti.append({
                 "nome": info["nome"],
                 "email": info["email"],
                 "seriale": s,
-                "data": info.get("data", "")
+                "data": info.get("data", ""),
+                "completed": bool(info.get("report")),
+                "has_alert": has_alert
             })
-    utenti = sorted(utenti, key=lambda x: x.get("data", ""))
-    return render_template("admin_dashboard.html", utenti=utenti, serials_list=serials_list)
+
+    # Ordina per data (più recenti prima)
+    utenti = sorted(utenti, key=lambda x: x.get("data", ""), reverse=True)
+
+    return render_template("admin_dashboard_enhanced.html", 
+                         utenti=utenti, 
+                         serials_list=serials_list,
+                         stats=stats,
+                         success_message=success_message)
+
+@app.route("/admin/api/stats")
+def admin_api_stats():
+    """API endpoint per statistiche dashboard"""
+    if not session.get("admin_logged"):
+        return jsonify({"error": "Non autorizzato"}), 401
+
+    stats = get_admin_stats()
+    usage_trend = get_usage_trend()
+    scale_averages = get_scale_averages()
+
+    return jsonify({
+        "stats": stats,
+        "usage_trend": usage_trend,
+        "scale_averages": scale_averages
+    })
+
+@app.route("/admin/api/generate_codes", methods=["POST"])
+def admin_api_generate_codes():
+    """API endpoint per generare codici"""
+    if not session.get("admin_logged"):
+        return jsonify({"error": "Non autorizzato"}), 401
+
+    try:
+        data = request.get_json()
+        num_codici = data.get("num_codici", 50)
+        prefix = data.get("prefix", "GO2B")
+
+        nuovi_codici = genera_codici_batch(num_codici, prefix)
+
+        return jsonify({
+            "success": True,
+            "message": f"{num_codici} codici generati con successo",
+            "codes": nuovi_codici
+        })
+    except Exception as e:
+        return jsonify({
+            "success": False,
+            "message": f"Errore: {str(e)}"
+        }), 500
 
 @app.route("/admin/report/<email>/<seriale>")
 def admin_report(email, seriale):
+    if not session.get("admin_logged"):
+        return redirect(url_for("admin_login"))
+
     codici = carica_codici()
     user = codici.get(seriale)
     if not user or user.get("email") != email:
@@ -278,23 +407,163 @@ def admin_report(email, seriale):
         risposte_dettaglio=risposte_dettaglio
     )
 
-@app.route("/admin/codici_excel")
-def codici_excel():
+@app.route("/admin/export/users")
+def admin_export_users():
+    """Esporta lista utenti in Excel"""
     if not session.get("admin_logged"):
         return redirect(url_for("admin_login"))
-    codici = get_ultimi_codici()
+
+    codici = carica_codici()
+    output = io.BytesIO()
+    workbook = xlsxwriter.Workbook(output, {'in_memory': True})
+    worksheet = workbook.add_worksheet("Utenti")
+
+    # Headers
+    headers = ["Nome", "Email", "Codice Seriale", "Data Test", "Test Completato", "Alert Desiderabilità"]
+    for col, header in enumerate(headers):
+        worksheet.write(0, col, header)
+
+    # Data
+    row = 1
+    for seriale, info in codici.items():
+        if info.get("usato"):
+            has_alert = False
+            if info.get("report"):
+                ds = info["report"].get("Desiderabilità sociale", {})
+                has_alert = ds.get("percentile", 0) >= 85 or ds.get("stanina", 0) >= 8
+
+            worksheet.write(row, 0, info.get("nome", ""))
+            worksheet.write(row, 1, info.get("email", ""))
+            worksheet.write(row, 2, seriale)
+            worksheet.write(row, 3, info.get("data", ""))
+            worksheet.write(row, 4, "Sì" if info.get("report") else "No")
+            worksheet.write(row, 5, "Sì" if has_alert else "No")
+            row += 1
+
+    workbook.close()
+    output.seek(0)
+
+    return send_file(
+        output,
+        as_attachment=True,
+        download_name=f"utenti_go2b_{datetime.now().strftime('%Y%m%d_%H%M')}.xlsx",
+        mimetype="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    )
+
+@app.route("/admin/export/codes")
+def admin_export_codes():
+    """Esporta ultimi codici generati in Excel"""
+    if not session.get("admin_logged"):
+        return redirect(url_for("admin_login"))
+
+    codici_recenti = get_ultimi_codici()
     output = io.BytesIO()
     workbook = xlsxwriter.Workbook(output, {'in_memory': True})
     worksheet = workbook.add_worksheet("Codici")
-    worksheet.write(0, 0, "Codice Serial")
-    worksheet.write(0, 1, "Usato")
-    worksheet.write(0, 2, "Nome")
-    worksheet.write(0, 3, "Email")
-    for idx, code in enumerate(codici):
+
+    # Headers
+    worksheet.write(0, 0, "Codice Seriale")
+    worksheet.write(0, 1, "Stato")
+
+    # Data
+    codici_db = carica_codici()
+    for idx, code in enumerate(codici_recenti):
         worksheet.write(idx + 1, 0, code)
+        stato = "Utilizzato" if codici_db.get(code, {}).get("usato") else "Disponibile"
+        worksheet.write(idx + 1, 1, stato)
+
     workbook.close()
     output.seek(0)
-    return send_file(output, attachment_filename="ultimi_codici.xlsx", as_attachment=True)
+
+    return send_file(
+        output,
+        as_attachment=True,
+        download_name=f"codici_go2b_{datetime.now().strftime('%Y%m%d_%H%M')}.xlsx",
+        mimetype="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    )
+
+@app.route("/admin/export/results")
+def admin_export_results():
+    """Esporta risultati completi in Excel"""
+    if not session.get("admin_logged"):
+        return redirect(url_for("admin_login"))
+
+    codici = carica_codici()
+    output = io.BytesIO()
+    workbook = xlsxwriter.Workbook(output, {'in_memory': True})
+
+    # Foglio riassuntivo
+    summary_ws = workbook.add_worksheet("Riassunto")
+    headers = ["Nome", "Email", "Data Test"]
+
+    # Aggiungi headers per tutte le scale
+    scale_names = []
+    for seriale, info in codici.items():
+        if info.get("report"):
+            for scala in info["report"].keys():
+                if scala not in scale_names:
+                    scale_names.append(scala)
+
+    for scala in scale_names:
+        headers.extend([f"{scala} - Punteggio", f"{scala} - Percentile", f"{scala} - Stanina"])
+
+    for col, header in enumerate(headers):
+        summary_ws.write(0, col, header)
+
+    # Dati riassuntivi
+    row = 1
+    for seriale, info in codici.items():
+        if info.get("report"):
+            col = 0
+            summary_ws.write(row, col, info.get("nome", ""))
+            col += 1
+            summary_ws.write(row, col, info.get("email", ""))
+            col += 1
+            summary_ws.write(row, col, info.get("data", ""))
+            col += 1
+
+            for scala in scale_names:
+                if scala in info["report"]:
+                    dati = info["report"][scala]
+                    summary_ws.write(row, col, dati.get("punteggio_grezzo", ""))
+                    summary_ws.write(row, col + 1, dati.get("percentile", ""))
+                    summary_ws.write(row, col + 2, dati.get("stanina", ""))
+                col += 3
+            row += 1
+
+    # Foglio dettagli risposte
+    detail_ws = workbook.add_worksheet("Dettaglio Risposte")
+    detail_headers = ["Nome", "Email", "Domanda", "Scala", "Risposta", "Punteggio", "Inversa"]
+    for col, header in enumerate(detail_headers):
+        detail_ws.write(0, col, header)
+
+    detail_row = 1
+    for seriale, info in codici.items():
+        if info.get("risposte_dettaglio"):
+            for risposta in info["risposte_dettaglio"]:
+                detail_ws.write(detail_row, 0, info.get("nome", ""))
+                detail_ws.write(detail_row, 1, info.get("email", ""))
+                detail_ws.write(detail_row, 2, risposta.get("text", ""))
+                detail_ws.write(detail_row, 3, risposta.get("scala", ""))
+                detail_ws.write(detail_row, 4, risposta.get("answer", ""))
+                detail_ws.write(detail_row, 5, risposta.get("punteggio", ""))
+                detail_ws.write(detail_row, 6, "Sì" if risposta.get("reverse") else "No")
+                detail_row += 1
+
+    workbook.close()
+    output.seek(0)
+
+    return send_file(
+        output,
+        as_attachment=True,
+        download_name=f"risultati_completi_go2b_{datetime.now().strftime('%Y%m%d_%H%M')}.xlsx",
+        mimetype="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    )
+
+@app.route("/admin/logout")
+def admin_logout():
+    session.pop("admin_logged", None)
+    return redirect(url_for("admin_login"))
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8080, debug=True)
